@@ -10,5 +10,5 @@ exports.storeInDB = asyncHandler((req,res) => {
 
     //TODO make function to upload to firebase
     
-    res.status(200).json(params);
+    res.status(200).json(parameters);
 });
