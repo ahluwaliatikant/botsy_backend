@@ -20,6 +20,10 @@ app.use("/api/intents" , intentRoutes);
 app.use("/api/webhook/" , webhookRoute);
 app.use("/api/intents/custom" , customIntentRoutes);
 
+app.get("/test" , (req,res) => {
+    res.status(200).json({"success" : "done"});
+});
+
 app.listen(PORT , () => {
     console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
     console.log(`SERVER STARTED ON ${PORT}`);
