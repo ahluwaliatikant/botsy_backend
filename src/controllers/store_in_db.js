@@ -2,10 +2,11 @@ const express = require("express");
 const asyncHandler = require('@joellesenne/express-async-handler')
 
 exports.storeInDB = asyncHandler((req,res) => {
-    const {sessionID , params} = req.body;
+    const {intentName , parameters , session} = req.body;
 
-    console.log(sessionID);
-    console.log(params);
+    console.log(intentName);
+    console.log(parameters);
+    console.log(session);
 
     //TODO make function to upload to firebase
     
