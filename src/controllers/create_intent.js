@@ -266,7 +266,7 @@ function getCustomBotProps(name , fields){
         var part = create_part('@' + partNameWithHyphens, partType, partNameWithHyphens, true);
         console.log("PART CREATED");
         var part2 = create_part(' ');
-        var param_for_part = create_parameter(partName ,'$' + partNameWithHyphens, partType , true , ["Please Enter " + partName + "."]);
+        var param_for_part = create_parameter(partNameWithHyphens ,'$' + partNameWithHyphens, partType , true , ["Please Enter " + partName + "."]);
         paramsList.push(param_for_part);
         partsList.push(part);
         partsList.push(part2);
