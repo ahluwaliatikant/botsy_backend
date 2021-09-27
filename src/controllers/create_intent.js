@@ -244,6 +244,10 @@ function myTypeToEntity( myDataType ){
 
 }
 
+function cleanString(str) {
+    return str.replace(/ /g, '-').toLowerCase();
+}
+
 function getCustomBotProps(name , fields){
     var part1 = create_part(name);
     var partSpace = create_part(' ');
@@ -256,16 +260,17 @@ function getCustomBotProps(name , fields){
         console.log(element);
         console.log(element["name"]);
         var partName = element["name"];
+        var partNameWithHyphens = cleanString(partName);
         var partType = myTypeToEntity(element["type"]);
         console.log(partType);
-        var part = create_part('@' + partName, partType, partName, true);
+        var part = create_part('@' + partNameWithHyphens, partType, partNameWithHyphens, true);
         console.log("PART CREATED");
         var part2 = create_part(' ');
-        var param_for_part = create_parameter(partName ,'$' + partName, partType , true , ["Please Enter" + partName + "."]);
+        var param_for_part = create_parameter(partName ,'$' + partNameWithHyphens, partType , true , ["Please Enter " + partName + "."]);
         paramsList.push(param_for_part);
         partsList.push(part);
         partsList.push(part2);
-        messageText = messageText  + partName + " - " + "$" + partName + " ";
+        messageText = messageText  + partName + " - " + "$" + partNameWithHyphens + " ";
     });
 
     messageText = messageText+" have been successfully stored in our database.";
@@ -296,7 +301,7 @@ exports.createCustomIntent = asyncHandler((req,res) => {
     //        "type": "Phone Number"
     //    }
     //]
-    //console.log("IN CREATE CUSTOM INTENT 2");
+    console.log("IN CREATE CUSTOM INTENT");
 
     var props = getCustomBotProps(name, fields)
 
@@ -313,7 +318,7 @@ exports.createCustomIntent = asyncHandler((req,res) => {
     }
     catch(err){
         console.log(err);
-        res.status()
+        res.status(503).json({"status": "failed"});
     }
 
     //console.log("IN CREATE CUSTOM INTENT 3");
