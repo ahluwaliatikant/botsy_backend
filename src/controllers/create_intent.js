@@ -315,6 +315,7 @@ exports.createCustomIntent = asyncHandler((req,res) => {
             props["params"],
             props["messageTexts"]
         )
+        res.status(200).json({"success": "done"});
     }
     catch(err){
         console.log(err);
@@ -322,8 +323,6 @@ exports.createCustomIntent = asyncHandler((req,res) => {
     }
 
     //console.log("IN CREATE CUSTOM INTENT 3");
-
-    res.status(200).json({"success": "done"});
 });
 
 
