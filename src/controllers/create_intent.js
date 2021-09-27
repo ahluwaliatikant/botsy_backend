@@ -113,7 +113,8 @@ function create_intent(
             displayName: displayName,
             parameters: parameters,
             trainingPhrases: trainingPhrases,
-            messages: messages
+            messages: messages,
+            webhookState: "WEBHOOK_STATE_ENABLED",
         }
         // var temp_req = {"inputContextNames":[],"events":[],"trainingPhrases":[{"parts":[{"text":"My Name is ","entityType":"","alias":"","userDefined":false},{"text":"John","entityType":"@sys.given-name","alias":"first-name","userDefined":true},{"text":" ","entityType":"","alias":"","userDefined":false},{"text":"Willow","entityType":"@sys.last-name","alias":"family-name","userDefined":true}],"type":"EXAMPLE","timesAddedCount":0}],"outputContexts":[],"parameters":[{"prompts":[],"displayName":"first-name","value":"$first-name","defaultValue":"","entityTypeDisplayName":"@sys.given-name","mandatory":false,"isList":false},{"prompts":[],"displayName":"family-name","value":"$family-name","defaultValue":"","entityTypeDisplayName":"@sys.last-name","mandatory":true,"isList":false}],"messages":[{"platform":"PLATFORM_UNSPECIFIED","text":{"text":["Hey $first-name $family-name","Good to hear from $first-name $family-name"]},"message":"text"}],"defaultResponsePlatforms":[],"followupIntentInfo":[],"displayName":"myNewTestIntentv3","priority":500000,"isFallback":false,"webhookState":"WEBHOOK_STATE_UNSPECIFIED","action":"","resetContexts":false,"rootFollowupIntentName":"","parentFollowupIntentName":"","mlDisabled":false,"liveAgentHandoff":false,"endInteraction":false}
         const createIntentRequest = {
