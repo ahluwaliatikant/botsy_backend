@@ -274,7 +274,7 @@ function getCustomBotProps(name , fields){
         paramsList.push(param_for_part);
         partsList.push(part);
         partsList.push(part2);
-        messageText = messageText  + partName + " - " + "$" + partNameWithHyphens + " ";
+        messageText = messageText  + partName + " - " + "$" + partNameWithHyphens + " ,";
     });
 
     messageText = messageText+" have been successfully stored in our database.";
