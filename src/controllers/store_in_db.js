@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-exports.storeInDB = asyncHandler((req, res) => {
+exports.storeInDB = asyncHandler(async (req, res) => {
   const { intentName, parameters, session } = req.body;
 
   console.log(intentName);
@@ -24,7 +24,7 @@ exports.storeInDB = asyncHandler((req, res) => {
   console.log(session);
 
   const intentCollection = db.collection(intentName);
-  intentCollection.add(parameters);
+  await intentCollection.add(parameters);
 
   //TODO make function to upload to firebase
 
