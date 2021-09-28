@@ -2,7 +2,7 @@ const express = require("express");
 const asyncHandler = require('@joellesenne/express-async-handler')
 // const firebase = require("firebase");
 const {initializeApp} = require("firebase/app");
-const {getFirestore} = require("firebase/firestore/lite");
+const {getFirestore, collection} = require("firebase/firestore/lite");
 
 const firebaseConfig = {
   apiKey: "AIzaSyC4L4Hq0gOHWbzPfloqUmk3BivhI2s-bD4",
@@ -26,7 +26,7 @@ exports.storeInDB = asyncHandler(async(req,res) => {
     console.log(session);
     //TODO make function to upload to firebase
     const intentsCol = collection(db, intentName);
-    await intentCollection.add(parameters);
+    var responseFromFirebase = await intentCollection.add(parameters);
     
-    res.status(200).json(parameters);
+    res.status(200).json({"firebase": responseFromFirebase});
 });
