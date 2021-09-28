@@ -235,10 +235,13 @@ function myTypeToEntity( myDataType ){
     dataTypeToEntity.set("Long Number" , "@sys.number");
     dataTypeToEntity.set("Integer" , "@sys.integer");
     dataTypeToEntity.set("Date" , "@sys.date");
-    dataTypeToEntity.set( "Phone Number"  , "@sys.phone-number");
+    dataTypeToEntity.set("Phone Number"  , "@sys.phone-number");
     dataTypeToEntity.set("First Name" , "@sys.given-name");
     dataTypeToEntity.set("Last Name" ,  "@sys.last-name");
     dataTypeToEntity.set("URL" , "@sys.url");
+    dataTypeToEntity.set("Time" , "@sys.time");
+    dataTypeToEntity.set("Email" , "@sys.email");
+    dataTypeToEntity.set("Age" , "@sys.age");
 
     console.log(dataTypeToEntity.get(myDataType));
     return dataTypeToEntity.get(myDataType);
