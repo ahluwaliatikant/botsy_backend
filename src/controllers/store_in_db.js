@@ -1,6 +1,8 @@
 const express = require("express");
 const asyncHandler = require('@joellesenne/express-async-handler')
-const firebase = require("firebase");
+// const firebase = require("firebase");
+const {initializeApp} = require("firebase/app");
+const {getFirestore} = require("firebase/firestore/lite");
 
 const firebaseConfig = {
   apiKey: "AIzaSyC4L4Hq0gOHWbzPfloqUmk3BivhI2s-bD4",
@@ -12,9 +14,9 @@ const firebaseConfig = {
   measurementId: "G-KF0WXL61TM"
 };
 
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const db = firebase.firestore();
+const db = getFirestore(app);
 
 exports.storeInDB = asyncHandler(async(req,res) => {
     const {intentName , parameters , session} = req.body;
