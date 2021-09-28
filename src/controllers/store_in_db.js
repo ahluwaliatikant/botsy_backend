@@ -26,7 +26,7 @@ exports.storeInDB = asyncHandler(async(req,res) => {
     console.log(session);
     //TODO make function to upload to firebase
     const intentsCol = collection(db, intentName);
-    var responseFromFirebase = await intentCollection.add(parameters);
+    var responseFromFirebase = await intentCol.add(parameters);
     
     res.status(200).json({"firebase": responseFromFirebase});
 });
