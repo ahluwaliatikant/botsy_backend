@@ -3,13 +3,13 @@ const asyncHandler = require("@joellesenne/express-async-handler");
 const firebase = require("firebase");
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD-HHz5P1nXHo4SOzeQKQw8j0UfqFzZalw",
-  authDomain: "botsy-1c436.firebaseapp.com",
-  projectId: "botsy-1c436",
-  storageBucket: "botsy-1c436.appspot.com",
-  messagingSenderId: "628923368078",
-  appId: "1:628923368078:web:aab96c72501fe074313fdf",
-  measurementId: "G-EPN51DR108",
+  apiKey: "AIzaSyC4L4Hq0gOHWbzPfloqUmk3BivhI2s-bD4",
+  authDomain: "testagent-gjkk.firebaseapp.com",
+  projectId: "testagent-gjkk",
+  storageBucket: "testagent-gjkk.appspot.com",
+  messagingSenderId: "280386602838",
+  appId: "1:280386602838:web:0ab0b044b6b135639d38f7",
+  measurementId: "G-KF0WXL61TM"
 };
 
 firebase.initializeApp(firebaseConfig);
